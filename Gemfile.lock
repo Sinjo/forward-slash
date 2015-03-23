@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    restful_operator (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -13,4 +18,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pry
+  pry (~> 0.10.1)
+  restful_operator!
