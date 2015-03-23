@@ -3,10 +3,10 @@ require "restful_operator/domain_part"
 
 module RestfulOperator
   def http(url)
-    puts url.build
+    puts url.part
   end
 
-  def method_missing(part_name, *args)
-    DomainPart.new(part_name.to_s)
+  def method_missing(part, *args)
+    DomainPart.new(part.to_s)
   end
 end

@@ -2,24 +2,24 @@ require "net/http"
 
 module RestfulOperator
   class DomainPart
-    attr_reader :part_name
+    attr_reader :part
 
-    def initialize(part_name)
-      @part_name = part_name
-      @path_components = []
+    def initialize(part)
+      @part = part
     end
 
-    def build
-      ([part_name] + @path_components).join("/")
+    def -(other)
+      @part += "-#{other.part}"
+      self
     end
 
-    def /(next_path_part)
-      @path_components << next_path_part.part_name
+    def /(other)
+      @part += "/#{other.part}"
       self
     end
 
     def method_missing(next_domain_part, *args)
-      @part_name += ".#{next_domain_part.to_s}"
+        @part += ".#{next_domain_part.to_s}"
       self
     end
   end

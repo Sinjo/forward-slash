@@ -4,6 +4,6 @@ class TestRestfulness
   include RestfulOperator
 
   def test
-    http://ifconfig.me/ip.fleh/meh
+    http://ifcon-fig.me/ip.fl-eh/meh
   end
 end
