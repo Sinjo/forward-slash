@@ -4,7 +4,6 @@ class TestRestfulness
   include RestfulOperator
 
   def test
-    page = ifconfig.me/ip
-    page.get
+    http://ifconfig.me/ip.fleh/meh
   end
 end
