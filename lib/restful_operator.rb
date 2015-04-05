@@ -1,9 +1,22 @@
+require "binding_of_caller"
 require "restful_operator/core_ext/symbol"
 require "restful_operator/domain_part"
 
 module RestfulOperator
+  def self.included(base)
+    base.extend self
+  end
+
   def http(url)
-    puts url.part
+    result = Net::HTTP.get(URI("http://#{url.part}"))
+    calling_object = binding.of_caller(1).receiver
+    calling_object.instance_variable_set(:@result, result)
+  end
+
+  def https(url)
+    result = Net::HTTP.get(URI("https://#{url.part}"))
+    calling_object = binding.of_caller(1).receiver
+    calling_object.instance_variable_set(:@result, result)
   end
 
   def method_missing(part, *args)

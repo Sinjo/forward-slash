@@ -2,11 +2,15 @@ PATH
   remote: .
   specs:
     restful_operator (0.0.1)
+      binding_of_caller (~> 0.7.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     coderay (1.1.0)
+    debug_inspector (0.0.2)
     method_source (0.8.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
