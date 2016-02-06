@@ -5,6 +5,8 @@ require "restful_operator/domain_part"
 module RestfulOperator
   def self.included(base)
     base.extend self
+    base.attr_accessor(:result)
+    base.class_attribute(:result)
   end
 
   def http(url)

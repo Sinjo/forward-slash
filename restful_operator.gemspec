@@ -17,4 +17,6 @@ Gem::Specification.new do |s|
   s.add_dependency "binding_of_caller", "~> 0.7.2"
 
   s.add_development_dependency "pry", "~> 0.10.1"
+  s.add_development_dependency "rspec", "~> 3.4.0"
+  s.add_development_dependency "webmock", "~> 1.22.6"
 end

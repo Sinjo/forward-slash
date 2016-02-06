@@ -7,16 +7,39 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.4.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     coderay (1.1.0)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
+    diff-lcs (1.2.5)
+    hashdiff (0.2.3)
     method_source (0.8.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.2)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    safe_yaml (1.0.4)
     slop (3.6.0)
+    webmock (1.22.6)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
@@ -24,3 +47,5 @@ PLATFORMS
 DEPENDENCIES
   pry (~> 0.10.1)
   restful_operator!
+  rspec (~> 3.4.0)
+  webmock (~> 1.22.6)
