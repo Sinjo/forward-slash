@@ -4,9 +4,12 @@ require "restful_operator/domain_part"
 
 module RestfulOperator
   def self.included(base)
-    base.extend self
-    base.attr_accessor(:result)
+    base.send(:attr_accessor, :result)
+
+    base.send(:require, "active_support/core_ext/class/attribute")
     base.class_attribute(:result)
+
+    base.extend self
   end
 
   def http(url)

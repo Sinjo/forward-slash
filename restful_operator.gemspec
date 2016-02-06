@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/sinjo/restful_operator"
   s.license     = "MIT"
 
+  s.add_dependency "activesupport", "~> 4.2.5"
   s.add_dependency "binding_of_caller", "~> 0.7.2"
 
   s.add_development_dependency "pry", "~> 0.10.1"
