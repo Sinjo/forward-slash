@@ -20,48 +20,49 @@ RSpec.describe RestfulOperator do
       end
     end
   }
+  let(:response) { "Hello" }
 
   context "for plain HTTP" do
     before do
       stub_request(:get, "http://example.com").
-        to_return(body: "Hello")
+        to_return(body: response)
     end
 
     context "in instance methods" do
       it "fetches the page and saves the result" do
         expect(fetcher.new("http://example.com").test_fetch).
-          to eq("Hello")
+          to eq(response)
       end
     end
 
     context "in class methods" do
       it "fetches the page and saves the result" do
         expect(fetcher.test_fetch("http://example.com")).
-          to eq("Hello")
+          to eq(response)
       end
     end
 
     context "with a hyphen" do
       before do
         stub_request(:get, "http://exa-mple.com").
-          to_return(body: "Hello")
+          to_return(body: response)
       end
 
       it "fetches the page and saves the result" do
         expect(fetcher.test_fetch("http://exa-mple.com")).
-          to eq("Hello")
+          to eq(response)
       end
     end
 
     context "with a path after the domain" do
       before do
         stub_request(:get, "http://example.com/foo").
-          to_return(body: "Hello")
+          to_return(body: response)
       end
 
       it "fetches the page and saves the result" do
         expect(fetcher.test_fetch("http://example.com/foo")).
-          to eq("Hello")
+          to eq(response)
       end
     end
   end
@@ -69,44 +70,44 @@ RSpec.describe RestfulOperator do
   context "for HTTPS" do
     before do
       stub_request(:get, "https://example.com").
-        to_return(body: "Hello")
+        to_return(body: response)
     end
 
     context "in instance methods" do
       it "fetches the page and saves the result" do
         expect(fetcher.new("https://example.com").test_fetch).
-          to eq("Hello")
+          to eq(response)
       end
     end
 
     context "in class methods" do
       it "fetches the page and saves the result" do
         expect(fetcher.test_fetch("https://example.com")).
-          to eq("Hello")
+          to eq(response)
       end
     end
 
     context "with a hyphen" do
       before do
         stub_request(:get, "http://exa-mple.com").
-          to_return(body: "Hello")
+          to_return(body: response)
       end
 
       it "fetches the page and saves the result" do
         expect(fetcher.test_fetch("http://exa-mple.com")).
-          to eq("Hello")
+          to eq(response)
       end
     end
 
     context "with a path after the domain" do
       before do
         stub_request(:get, "http://example.com/foo").
-          to_return(body: "Hello")
+          to_return(body: response)
       end
 
       it "fetches the page and saves the result" do
         expect(fetcher.test_fetch("http://example.com/foo")).
-          to eq("Hello")
+          to eq(response)
       end
     end
   end
