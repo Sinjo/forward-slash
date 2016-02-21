@@ -43,6 +43,23 @@ RSpec.describe RestfulOperator do
   end
 
   context "for HTTPS" do
+    before do
+      stub_request(:get, "https://example.com").
+        to_return(body: "Hello")
+    end
 
+    context "in instance methods" do
+      it "fetches the page and saves the result" do
+        expect(fetcher.new("https://example.com").test_fetch).
+          to eq("Hello")
+      end
+    end
+
+    context "in class methods" do
+      it "fetches the page and saves the result" do
+        expect(fetcher.test_fetch("https://example.com")).
+          to eq("Hello")
+      end
+    end
   end
 end
