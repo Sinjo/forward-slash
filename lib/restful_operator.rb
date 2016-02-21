@@ -4,7 +4,7 @@ require "restful_operator/domain_part"
 
 module RestfulOperator
   def self.included(base)
-    base.send(:attr_accessor, :result)
+    base.send(:attr_reader, :result)
     base.define_singleton_method(:result) do
       @result
     end
