@@ -40,6 +40,30 @@ RSpec.describe RestfulOperator do
           to eq("Hello")
       end
     end
+
+    context "with a hyphen" do
+      before do
+        stub_request(:get, "http://exa-mple.com").
+          to_return(body: "Hello")
+      end
+
+      it "fetches the page and saves the result" do
+        expect(fetcher.test_fetch("http://exa-mple.com")).
+          to eq("Hello")
+      end
+    end
+
+    context "with a path after the domain" do
+      before do
+        stub_request(:get, "http://example.com/foo").
+          to_return(body: "Hello")
+      end
+
+      it "fetches the page and saves the result" do
+        expect(fetcher.test_fetch("http://example.com/foo")).
+          to eq("Hello")
+      end
+    end
   end
 
   context "for HTTPS" do
@@ -58,6 +82,30 @@ RSpec.describe RestfulOperator do
     context "in class methods" do
       it "fetches the page and saves the result" do
         expect(fetcher.test_fetch("https://example.com")).
+          to eq("Hello")
+      end
+    end
+
+    context "with a hyphen" do
+      before do
+        stub_request(:get, "http://exa-mple.com").
+          to_return(body: "Hello")
+      end
+
+      it "fetches the page and saves the result" do
+        expect(fetcher.test_fetch("http://exa-mple.com")).
+          to eq("Hello")
+      end
+    end
+
+    context "with a path after the domain" do
+      before do
+        stub_request(:get, "http://example.com/foo").
+          to_return(body: "Hello")
+      end
+
+      it "fetches the page and saves the result" do
+        expect(fetcher.test_fetch("http://example.com/foo")).
           to eq("Hello")
       end
     end
