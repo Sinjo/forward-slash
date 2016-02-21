@@ -27,9 +27,18 @@ RSpec.describe RestfulOperator do
         to_return(body: "Hello")
     end
 
-    it "fetches the page and saves the result" do
-      expect(fetcher.new("http://example.com").test_fetch).
-        to eq("Hello")
+    context "in instance methods" do
+      it "fetches the page and saves the result" do
+        expect(fetcher.new("http://example.com").test_fetch).
+          to eq("Hello")
+      end
+    end
+
+    context "in class methods" do
+      it "fetches the page and saves the result" do
+        expect(fetcher.test_fetch("http://example.com")).
+          to eq("Hello")
+      end
     end
   end
 
