@@ -6,8 +6,8 @@ module RestfulOperator
   def self.included(base)
     base.send(:attr_accessor, :result)
 
-    base.send(:require, "active_support/core_ext/class/attribute")
-    base.class_attribute(:result)
+    #base.send(:require, "active_support/core_ext/class/attribute")
+    #base.class_attribute(:result)
 
     base.extend self
   end
