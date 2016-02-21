@@ -16,7 +16,7 @@ RSpec.describe RestfulOperator do
 
       def self.test_fetch(url)
         eval url
-        @result
+        result
       end
     end
   }

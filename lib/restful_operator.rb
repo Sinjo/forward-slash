@@ -5,9 +5,9 @@ require "restful_operator/domain_part"
 module RestfulOperator
   def self.included(base)
     base.send(:attr_accessor, :result)
-
-    #base.send(:require, "active_support/core_ext/class/attribute")
-    #base.class_attribute(:result)
+    base.define_singleton_method(:result) do
+      @result
+    end
 
     base.extend self
   end
