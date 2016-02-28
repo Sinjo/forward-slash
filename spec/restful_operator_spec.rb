@@ -36,12 +36,12 @@ RSpec.describe RestfulOperator do
     end
   end
 
+  before do
+    stub_request(:get, url).to_return(body: response)
+  end
+
   context "for plain HTTP" do
     let(:url) { "http://example.com" }
-
-    before do
-      stub_request(:get, url).to_return(body: response)
-    end
 
     include_examples "performing HTTP requests"
 
@@ -60,10 +60,6 @@ RSpec.describe RestfulOperator do
 
   context "for HTTPS" do
     let(:url) { "https://example.com" }
-
-    before do
-      stub_request(:get, url).to_return(body: response)
-    end
 
     include_examples "performing HTTP requests"
 
