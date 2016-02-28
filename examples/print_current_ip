@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift 'lib'
+require "bundler"
+Bundler.require
+
+class CurrentIp
+  include RestfulOperator
+
+  def self.print
+    http://ifconfig.me/ip
+    puts result
+  end
+end
+
+CurrentIp.print
