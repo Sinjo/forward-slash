@@ -20,7 +20,6 @@ RSpec.describe RestfulOperator do
       end
     end
   }
-  let(:response) { "Hello" }
 
   shared_examples_for "performing HTTP requests" do
     context "in instance methods" do
@@ -36,43 +35,39 @@ RSpec.describe RestfulOperator do
     end
   end
 
+  shared_examples_for "different URL structures" do
+    let(:url) { "#{scheme}://example.com" }
+
+    include_examples "performing HTTP requests"
+
+    context "with a hyphen" do
+      let(:url) { "#{scheme}://exa-mple.com" }
+
+      include_examples "performing HTTP requests"
+    end
+
+    context "with a path after the domain" do
+      let(:url) { "#{scheme}://example.com/foo" }
+
+      include_examples "performing HTTP requests"
+    end
+  end
+
+  let(:response) { "Hello" }
+
   before do
     stub_request(:get, url).to_return(body: response)
   end
 
   context "for plain HTTP" do
-    let(:url) { "http://example.com" }
+    let(:scheme) { "http" }
 
-    include_examples "performing HTTP requests"
-
-    context "with a hyphen" do
-      let(:url) { "http://exa-mple.com" }
-
-      include_examples "performing HTTP requests"
-    end
-
-    context "with a path after the domain" do
-      let(:url) { "http://example.com/foo" }
-
-      include_examples "performing HTTP requests"
-    end
+    include_examples "different URL structures"
   end
 
   context "for HTTPS" do
-    let(:url) { "https://example.com" }
+    let(:scheme) { "https" }
 
-    include_examples "performing HTTP requests"
-
-    context "with a hyphen" do
-      let(:url) { "https://exa-mple.com" }
-
-      include_examples "performing HTTP requests"
-    end
-
-    context "with a path after the domain" do
-      let(:url) { "https://example.com/foo" }
-
-      include_examples "performing HTTP requests"
-    end
+    include_examples "different URL structures"
   end
 end
