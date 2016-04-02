@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    restful_operator (0.0.1)
+    forward-slash (0.0.1)
       binding_of_caller (~> 0.7.2)
 
 GEM
@@ -45,7 +45,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  forward-slash!
   pry (~> 0.10.1)
-  restful_operator!
   rspec (~> 3.4.0)
   webmock (~> 1.22.6)
+
+BUNDLED WITH
+   1.11.2

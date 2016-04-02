@@ -1,6 +1,6 @@
 require "net/http"
 
-module RestfulOperator
+module ForwardSlash
   class DomainPart
     attr_reader :part
 

@@ -1,3 +1,3 @@
-module RestfulOperator
+module ForwardSlash
   VERSION = "0.0.1"
 end

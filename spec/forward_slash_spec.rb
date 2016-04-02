@@ -1,9 +1,9 @@
-require "restful_operator"
+require "forward_slash"
 
-RSpec.describe RestfulOperator do
+RSpec.describe ForwardSlash do
   let(:fetcher) {
     Class.new do
-      include RestfulOperator
+      include ForwardSlash
 
       def initialize(url)
         @url = url

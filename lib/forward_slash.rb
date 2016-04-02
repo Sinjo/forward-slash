@@ -1,8 +1,8 @@
 require "binding_of_caller"
-require "restful_operator/core_ext/symbol"
-require "restful_operator/domain_part"
+require "forward_slash/core_ext/symbol"
+require "forward_slash/domain_part"
 
-module RestfulOperator
+module ForwardSlash
   def self.included(base)
     base.send(:attr_reader, :result)
     base.define_singleton_method(:result) do
