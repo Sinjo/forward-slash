@@ -5,7 +5,7 @@ require "forward_slash/version"
 Gem::Specification.new do |s|
   s.name          = "forward-slash"
   s.version       = ForwardSlash::VERSION
-  s.date          = "2015-03-23"
+  s.date          = "2016-04-04"
   s.summary       = "An HTTP client with REST literals"
   s.description   = <<-EOF
 ForwardSlash makes REST a first-class citizen of the Ruby programming language.
