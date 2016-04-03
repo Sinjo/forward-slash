@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    forward-slash (0.0.1)
+    forward-slash (1.0.0)
       binding_of_caller (~> 0.7.2)
 
 GEM
