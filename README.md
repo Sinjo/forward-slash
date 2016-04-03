@@ -14,6 +14,12 @@ Install the gem:
 gem install forward-slash
 ```
 
+Require the module:
+
+```
+require 'forward_slash'
+```
+
 Then include the `ForwardSlash` module in a class you want to make HTTP calls from, and you're good to go! Here's a runnable example (taken from the `examples` folder):
 
 ```ruby
