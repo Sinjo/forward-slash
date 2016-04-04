@@ -16,7 +16,7 @@ gem install forward-slash
 
 Require the module:
 
-```
+```ruby
 require 'forward_slash'
 ```
 
