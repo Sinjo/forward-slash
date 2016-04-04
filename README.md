@@ -48,6 +48,10 @@ Anything that isn't valid Ruby syntax is unsupported, including:
   - Query strings
   - Trailing slashes on URLs
 
+# Compatibility
+
+I've tested it on Ruby 2.2.4. It might work on other versions.
+
 # Should I use this?
 
 \#yeauxleaux
