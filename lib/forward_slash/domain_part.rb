@@ -19,7 +19,7 @@ module ForwardSlash
     end
 
     def method_missing(next_domain_part, *args)
-        @part += ".#{next_domain_part.to_s}"
+      @part += ".#{next_domain_part.to_s}"
       self
     end
   end

@@ -10,12 +10,24 @@ RSpec.describe ForwardSlash do
       end
 
       def test_fetch
-        eval @url
+        # Because you can't create new instance variables when running `eval`
+        # inside a method, we need to make `result` exist first
+        result = nil
+
+        # We are deliberately doing the assignment inside `eval` as that is
+        # a better approximation of how users would use this library (i.e.
+        # they'd have a local variable and a URL directly in their code)
+        eval "result = #{@url}"
+
+        # This is the only reasonable line of code in this method
         result
       end
 
       def self.test_fetch(url)
-        eval url
+        # Same as above, but using the parameter instead of the instance
+        # variable
+        result = nil
+        eval "result = #{url}"
         result
       end
     end
