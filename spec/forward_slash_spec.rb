@@ -10,7 +10,7 @@ RSpec.describe ForwardSlash do
       end
 
       def test_fetch
-        # Because you can't create new instance variables when running `eval`
+        # Because you can't create new local variables when running `eval`
         # inside a method, we need to make `result` exist first
         result = nil
 
