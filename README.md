@@ -33,7 +33,7 @@ class CurrentIp
   include ForwardSlash
 
   def self.print
-    http://ifconfig.me/ip
+    result = http://ifconfig.me/ip
     puts result
   end
 end
@@ -50,7 +50,7 @@ Anything that isn't valid Ruby syntax is unsupported, including:
 
 # Compatibility
 
-I've tested it on Ruby 2.2.4. It might work on other versions.
+The tests are run against all versions of Ruby currently supported by the core team. Anything else is unsupported.
 
 # Should I use this?
 
