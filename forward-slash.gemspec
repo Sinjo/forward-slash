@@ -22,8 +22,6 @@ EOF
   s.homepage      = "https://github.com/sinjo/forward-slash"
   s.license       = "MIT"
 
-  s.add_dependency "binding_of_caller", "~> 1.0.0"
-
   s.add_development_dependency "pry", "~> 0.14.1"
   s.add_development_dependency "rspec", "~> 3.10.0"
   s.add_development_dependency "webmock", "~> 3.14.0"

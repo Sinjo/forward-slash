@@ -1,4 +1,3 @@
-require "binding_of_caller"
 require "forward_slash/core_ext/symbol"
 require "forward_slash/domain_part"
 
