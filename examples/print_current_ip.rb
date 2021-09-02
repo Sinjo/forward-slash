@@ -1,14 +1,11 @@
-#!/usr/bin/env ruby
-
 $LOAD_PATH.unshift 'lib'
-require "bundler"
-Bundler.require
+require "forward_slash"
 
 class CurrentIp
   include ForwardSlash
 
   def self.print
-    http://ifconfig.me/ip
+    result = http://ifconfig.me/ip
     puts result
   end
 end

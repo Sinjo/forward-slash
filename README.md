@@ -23,11 +23,8 @@ require 'forward_slash'
 Then include the `ForwardSlash` module in a class you want to make HTTP calls from, and you're good to go! Here's a runnable example (taken from the `examples` folder):
 
 ```ruby
-#!/usr/bin/env ruby
-
 $LOAD_PATH.unshift 'lib'
-require "bundler"
-Bundler.require
+require "forward_slash"
 
 class CurrentIp
   include ForwardSlash
